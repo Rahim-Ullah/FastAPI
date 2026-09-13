@@ -40,9 +40,16 @@ def read_todo(id: int):
     return {"message": "Todo not found!"}
 
 
-# update a single todo [the better choice for update is PUT/PATCH?]
-# to update a single todo, we should use patch method, put method can also work but it will update the whole todo object as it's primary purpose is create a new todo
-# if the client sends a complete replacement object. then put method will replace the whole todo object with the new one so put is useful when complete data replacement is expected
+# QUESTION: Should we use PUT or PATCH to update a single todo?
+#
+# ANSWER: PATCH is the preferred method for partial updates. 
+# Use PATCH when you only want to modify specific fields (e.g., toggling a todo's 'completed' status) 
+# without affecting the rest of the object.
+#
+# ALTERNATIVE: PUT can also be used, but it requires a complete resource replacement. 
+# If you use PUT, the client must send the entire todo object. Any fields omitted from the 
+# request payload will be overwritten, cleared, or set to null/default values by the server.
+
 @app.put("/todos/{id}")
 def update_todo(id: int, new_todo: Todo): # here the new todo should be passed with different vriable name to the function argument (function arg != todo form the list or db inside the loop) [the concept behind is variable scoping]
     for todo in todos:
