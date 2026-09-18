@@ -12,6 +12,7 @@ async def logging_middleware(request: Request, call_next):
     print(f"Request took {process_time} seconds to process")
     return response
 
+# logging middleware 
 @app.middleware("http")
 # async def add_header(request: Request, call_next):
 #     response = await call_next(request)
@@ -23,6 +24,4 @@ async def my_middleware(request: Request, call_next):
     response.headers["X-Custom-Header"] = "My custom header"
     return response
 
-# @app.get("/") 
 
-# logging middleware
