@@ -123,3 +123,6 @@ def delete_todo(id: int, db: DBSession = Depends(get_db)):
 # PostgreSQL: SERIAL / IDENTITY column
 # MySQL: AUTO_INCREMENT
 # SQLite: INTEGER PRIMARY KEY becomes an alias for rowid, which auto-fills
+
+
+
