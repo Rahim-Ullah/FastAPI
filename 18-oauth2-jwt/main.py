@@ -53,7 +53,7 @@ def create_access_token(data: dict, expires_delta: timedelta) -> str:
 
 
 # Login API endpoint
-@app.post("/token")
+@app.post("/login")
 async def login(form_data: OAuth2PasswordRequestForm = Depends()):
     user = users_db.get(form_data.username)
 
