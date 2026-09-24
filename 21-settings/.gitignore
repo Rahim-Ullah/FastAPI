@@ -1,0 +1,11 @@
+# Python & Virtual Environment
+__pycache__/
+.venv/
+*.db
+
+# ----------------------------------------------------------------------
+# NOTE FOR PRODUCTION:
+# In real projects, UNCOMMENT the line below (# .env -> .env).
+# We must avoid git tracking .env so our private secrets are never leaked online.
+# ----------------------------------------------------------------------
+# .env
