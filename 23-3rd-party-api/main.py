@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 import requests # pip install requests 
 
 response_url = "https://jsonplaceholder.typicode.com/posts"
@@ -41,6 +41,10 @@ async def posts():
 @app.get("/post/{post_id}")
 async def post(post_id):
     url = f"https://jsonplaceholder.typicode.com/posts/{post_id}"
+    response = requests.get(url)
+    # also we can run a security check here 
+    if response.status_code != 200:
+        raise HTTPException(status_code=404, detail="Post not found")
     response = requests.get(url)
     return response.json()
 
