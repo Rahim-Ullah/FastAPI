@@ -1,0 +1,8 @@
+.venv/ 
+# this is a virtual environment folder that will contain the dependencies for the project. This folder should not be committed to the repository and should be kept locally, coz the virtual environment will be created and destroyed every time you run the project and the process is maintained by servers or host machines that you upload the project.
+
+__pycache__/ 
+# this is a cache folder that will contain the compiled python files. This folder should not be committed to the repository and should be kept locally, coz the compiled files will be created and destroyed every time you run the project and the process is maintained by servers or host machines that you upload your project to.
+
+local.env 
+# this is a local file will contain the secrets for production that you will use in the local environment of the host machine. This file should not be committed to the repository and should be kept secure.
